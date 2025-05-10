@@ -121,5 +121,38 @@
   .level-badge-advanced {
     @apply bg-purple-100 text-purple-800;
   }
+  
+  /* Additional animations */
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-music-gradient {
+    background: linear-gradient(135deg, var(--music-500) 0%, var(--music-700) 100%);
+  }
+  
+  /* Custom scrollbar for overlay */
+  .course-overlay-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .course-overlay-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+  
+  .course-overlay-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+  
+  .course-overlay-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
 }
-
