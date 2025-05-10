@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 import { CourseLevel } from '@/data/courses';
+import { BookOpen } from 'lucide-react';
 
 interface CourseCardProps {
   title: string;
@@ -50,7 +51,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 key={level}
                 onClick={() => onLevelClick && onLevelClick(level)}
                 className={cn(
-                  'level-badge cursor-pointer',
+                  'level-badge cursor-pointer transition-all duration-200 hover:scale-105',
                   getBadgeColor(level),
                   selectedLevel === level && 'ring-2 ring-offset-1',
                   selectedLevel === level && level === 'Beginner' && 'ring-green-400',
@@ -66,9 +67,10 @@ const CourseCard: React.FC<CourseCardProps> = ({
         
         <p className="text-gray-600 mb-5">{description}</p>
         <Button 
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white"
+          className="w-full bg-music-500 hover:bg-music-600 text-white transition-all duration-300 group"
           onClick={onClick}
         >
+          <BookOpen size={18} className="mr-2 transition-transform group-hover:-translate-y-1" />
           Enroll Now
         </Button>
       </div>
